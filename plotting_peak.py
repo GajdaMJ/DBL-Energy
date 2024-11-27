@@ -28,18 +28,18 @@ def read_csv(path):
 
 
 if __name__ == '__main__':
-    data_0 = read_csv("Data\\13-11-24\\azobenzene 50uM.Sample.Raw.csv")
-    data_5min = read_csv('Data\\13-11-24\\aB 50uM 5min 365nm.Sample.Raw.csv')
-    data_10min = read_csv('Data\\13-11-24\\aB 50uM 10min 365nm.Sample.Raw.csv')
-    data_15min = read_csv('Data\\13-11-24\\aB 50uM 15min 365nm.Sample.Raw.csv')
-    data_45min = read_csv('Data\\13-11-24\\aB 50uM 45min 365nm.Sample.Raw.csv')
-    data_60min = read_csv('Data\\13-11-24\\aB 50um 60min 365nm.Sample.Raw.csv')
+    data_0 = read_csv("Data/13-11-24/azobenzene 50uM.Sample.Raw.csv")
+    # data_5min = read_csv('Data\\13-11-24\\aB 50uM 5min 365nm.Sample.Raw.csv')
+    # data_10min = read_csv('Data\\13-11-24\\aB 50uM 10min 365nm.Sample.Raw.csv')
+    # data_15min = read_csv('Data\\13-11-24\\aB 50uM 15min 365nm.Sample.Raw.csv')
+    # data_45min = read_csv('Data\\13-11-24\\aB 50uM 45min 365nm.Sample.Raw.csv')
+    data_60min = read_csv('Data/13-11-24/aB 50um 60min 365nm.Sample.Raw.csv')
 
     plt.plot(data_0['nm'], data_0['A'], label='0 min', color='blue')  # Plot data_0
-    plt.plot(data_5min['nm'], data_5min['A'], label='5 min', color='green')  # Plot data_5min
-    plt.plot(data_10min['nm'], data_10min['A'], label='10 min', color='red')  # Plot data_10min
-    plt.plot(data_15min['nm'], data_15min['A'], label='15 min', color='orange')  # Plot data_15min
-    plt.plot(data_45min['nm'], data_45min['A'], label='45 min', color='purple')  # Plot data_45min
+    # plt.plot(data_5min['nm'], data_5min['A'], label='5 min', color='green')  # Plot data_5min
+    # plt.plot(data_10min['nm'], data_10min['A'], label='10 min', color='red')  # Plot data_10min
+    # plt.plot(data_15min['nm'], data_15min['A'], label='15 min', color='orange')  # Plot data_15min
+    # plt.plot(data_45min['nm'], data_45min['A'], label='45 min', color='purple')  # Plot data_45min
     plt.plot(data_60min['nm'], data_60min['A'], label='60 min', color='brown')  # Plot data_60min
 
 
@@ -65,37 +65,37 @@ if __name__ == '__main__':
 
     ## Plotting time vs abs_max
 
-    time = [0,5,10,15,45,60]
-    # Collect maximum absorbance values at each time point
-    abs_max = [np.max(data_0["A"]), np.max(data_5min["A"]), np.max(data_10min["A"]),np.max(data_15min["A"]), np.max(data_45min["A"]), np.max(data_60min["A"])]
+    # time = [0,5,10,15,45,60]
+    # # Collect maximum absorbance values at each time point
+    # abs_max = [np.max(data_0["A"]), np.max(data_5min["A"]), np.max(data_10min["A"]),np.max(data_15min["A"]), np.max(data_45min["A"]), np.max(data_60min["A"])]
 
-    def exponential_decay(t, A, B, C):
-        return A * np.exp(-B * t) + C
+    # def exponential_decay(t, A, B, C):
+    #     return A * np.exp(-B * t) + C
 
-    # Fit the exponential decay curve to the time vs abs_max data
-    params, covariance = curve_fit(exponential_decay, time, abs_max, p0=[1, 0.1, 0])
+    # # Fit the exponential decay curve to the time vs abs_max data
+    # params, covariance = curve_fit(exponential_decay, time, abs_max, p0=[1, 0.1, 0])
 
-    # Extract the fitted parameters
-    A_fit, B_fit, C_fit = params
+    # # Extract the fitted parameters
+    # A_fit, B_fit, C_fit = params
 
-    # Generate fitted data points
-    time_fine = np.linspace(min(time), max(time), 1000)  # Fine time points for a smooth curve
-    abs_max_fit = exponential_decay(time_fine, A_fit, B_fit, C_fit)
+    # # Generate fitted data points
+    # time_fine = np.linspace(min(time), max(time), 1000)  # Fine time points for a smooth curve
+    # abs_max_fit = exponential_decay(time_fine, A_fit, B_fit, C_fit)
 
-    # Plot Time vs Maximum Absorbance
-    plt.figure(figsize=(8, 6))
-    plt.plot(time, abs_max, marker='o', linestyle='-', color='b', label='Max Absorbance')
-    plt.plot(time_fine, abs_max_fit, linestyle='--', color='r', label='Exponential Fit')
+    # # Plot Time vs Maximum Absorbance
+    # plt.figure(figsize=(8, 6))
+    # plt.plot(time, abs_max, marker='o', linestyle='-', color='b', label='Max Absorbance')
+    # plt.plot(time_fine, abs_max_fit, linestyle='--', color='r', label='Exponential Fit')
 
-    # Labels and Title
-    plt.xlabel('Time (min)')
-    plt.ylabel('Maximum Absorbance (A)')
-    plt.title('Maximum Absorbance with Exponential Decay Fit')
-    plt.grid(True)
-    plt.legend()
+    # # Labels and Title
+    # plt.xlabel('Time (min)')
+    # plt.ylabel('Maximum Absorbance (A)')
+    # plt.title('Maximum Absorbance with Exponential Decay Fit')
+    # plt.grid(True)
+    # plt.legend()
 
-    # Show the plot
-    plt.show()
+    # # Show the plot
+    # plt.show()
 
-    # Print fitted parameters
-    print(f"Fitted parameters: A = {A_fit:.4f}, B = {B_fit:.4f}, C = {C_fit:.4f}")
+    # # Print fitted parameters
+    # print(f"Fitted parameters: A = {A_fit:.4f}, B = {B_fit:.4f}, C = {C_fit:.4f}")
