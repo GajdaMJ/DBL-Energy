@@ -46,17 +46,17 @@ def read_csv(path, base_line=False, base_line_path=None):
 
 
 if __name__ == '__main__':
-    data_0 = read_csv("Data/20-11-2024/DEAB air_base.Sample.Raw.csv",base_line = True, base_line_path="Data/20-11-2024/AC_base.Sample.Raw.csv")
-    data_5min = read_csv("Data/20-11-2024/DEAB air_base 5min 365nm.Sample.Raw.csv",base_line = True, base_line_path="Data/20-11-2024/AC_base.Sample.Raw.csv")
-    data_10min = read_csv('Data/20-11-2024/AC_base.Sample.Raw.csv')
-    data_15min = read_csv('Data/20-11-2024/DEAB air_base.Sample.Raw.csv')
+    data_0 = read_csv("Data/uv_vis/20_11_airbase/DEAB air_base.Sample.Raw.csv",base_line = True, base_line_path="Data/uv_vis/20_11_airbase/AC_base.Sample.Raw.csv")
+    data_5min = read_csv("Data/uv_vis/20_11_airbase/DEAB air_base long_time 365nm.Sample.Raw.csv",base_line = True, base_line_path="Data/uv_vis/20_11_airbase/AC_base.Sample.Raw.csv")
+    # data_10min = read_csv('Data/20-11-2024/AC_base.Sample.Raw.csv')
+    # data_15min = read_csv('Data/20-11-2024/DEAB air_base.Sample.Raw.csv')
     # data_45min = read_csv('Data\\13-11-24\\aB 50uM 45min 365nm.Sample.Raw.csv')
     # data_60min = read_csv('Data\\13-11-24\\aB 50um 60min 365nm.Sample.Raw.csv')
 
     plt.plot(data_0['nm'], data_0['A'], label='0 min', color='blue')  # Plot data_0
     plt.plot(data_5min['nm'], data_5min['A'], label='5 min', color='green')  # Plot data_5min
-    plt.plot(data_10min['nm'], data_10min['A'], label='solvent', color='red')  # Plot data_10min
-    plt.plot(data_15min['nm'], data_15min['A'], label='base with out correction', color='orange')  # Plot data_15min
+    # plt.plot(data_10min['nm'], data_10min['A'], label='solvent', color='red')  # Plot data_10min
+    # plt.plot(data_15min['nm'], data_15min['A'], label='base with out correction', color='orange')  # Plot data_15min
     # plt.plot(data_45min['nm'], data_45min['A'], label='45 min', color='purple')  # Plot data_45min
     # plt.plot(data_60min['nm'], data_60min['A'], label='60 min', color='brown')  # Plot data_60min
 
