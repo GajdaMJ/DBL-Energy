@@ -65,6 +65,14 @@ if __name__ == '__main__':
     max_y_index = np.argmax(data_0['A'])
     max_x_value = data_0['nm'][max_y_index]  # The corresponding x-value for max y
 
+    #finding the percent trans
+    # A_1 = max_y_index
+    # A_2 = data_5min[max_x_value]['A']
+    # percent_trans = A_2/A_1
+    
+    
+
+    #plotting the rest    
     plt.axvline(max_x_value, color='black', linestyle='--', linewidth=1, label=f'Max at nm = {max_x_value:.2f}')  # Vertical line at max y
     plt.axvline(365, color='black', linestyle='-.', linewidth=0.5, alpha=0.5, label='Compounds exposed with 365nm light')
     # Add labels and title
@@ -117,3 +125,4 @@ if __name__ == '__main__':
 
     # Print fitted parameters
     print(f"Fitted parameters: A = {A_fit:.4f}, B = {B_fit:.4f}, C = {C_fit:.4f}")
+    # print(f"Percent Trans = {percent_trans}")
