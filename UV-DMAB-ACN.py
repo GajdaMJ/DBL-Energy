@@ -4,41 +4,32 @@ import os
 
 
 # Read the DMAB files with baseline correction applied
-data_DMAB_3min_254nm = read_csv(r"Data\\UV-DMAB\\ACN\\254nm\\DMAB excited for 3 min (254).Sample.Raw.csv", 
-                                base_line=True, 
-                                base_line_path=r"Data\\UV-DMAB\\ACN\\385nm\\DMAB air_base.Sample.Raw.csv")
+data_DMAB_3min_254nm = read_csv(r"Data/UV-DMAB/ACN/254nm/DMAB excited for 3 min (254).Sample.Raw.csv", 
+                                base_line=False)
 
-data_DMAB_5min_310nm = read_csv(r"Data\\UV-DMAB\\ACN\\310nm\\DMAB excited for 5 min (310).Sample.Raw.csv", 
-                                base_line=True, 
-                                base_line_path=r"Data\\UV-DMAB\\ACN\\385nm\\DMAB air_base.Sample.Raw.csv")
+data_DMAB_5min_310nm = read_csv(r"Data/UV-DMAB/ACN/310nm/DMAB excited for 5 min (310).Sample.Raw.csv", 
+                                base_line=False)
 
-data_DMAB_10min_310nm = read_csv(r"Data\\UV-DMAB\\ACN\\310nm\\DMAB excited for 10 min (310).Sample.Raw.csv", 
-                                 base_line=True, 
-                                 base_line_path=r"Data\\UV-DMAB\\ACN\\385nm\\DMAB air_base.Sample.Raw.csv")
+data_DMAB_10min_310nm = read_csv(r"Data/UV-DMAB/ACN/310nm/DMAB excited for 10 min (310).Sample.Raw.csv", 
+                                 base_line=False)
 
-data_DMAB_6min_365nm = read_csv(r"Data\\UV-DMAB\\ACN\\365nm\\DMAB excited for 6 min (365).Sample.Raw.csv", 
-                                base_line=True, 
-                                base_line_path=r"Data\\UV-DMAB\\ACN\\385nm\\DMAB air_base.Sample.Raw.csv")
+data_DMAB_6min_365nm = read_csv(r"Data/UV-DMAB/ACN/365nm/DMAB excited for 6 min (365).Sample.Raw.csv", 
+                                base_line=False)
 
-data_DMAB_40min_365nm = read_csv(r"Data\\UV-DMAB\\ACN\\365nm\\DMAB excited for 40 min ( 365).Sample.Raw.csv", 
-                                 base_line=True, 
-                                 base_line_path=r"Data\\UV-DMAB\\ACN\\385nm\\DMAB air_base.Sample.Raw.csv")
+data_DMAB_40min_365nm = read_csv(r"Data/UV-DMAB/ACN/365nm/DMAB excited for 40 min ( 365).Sample.Raw.csv", 
+                                 base_line=False)
 
-data_DMAB_385nm_peak = read_csv(r"Data\\UV-DMAB\\ACN\\385nm\\DMAB air_base (peak_over_1).Sample.Raw.csv", 
-                                base_line=True, 
-                                base_line_path=r"Data\\UV-DMAB\\ACN\\385nm\\DMAB air_base.Sample.Raw.csv")
+data_DMAB_385nm_peak = read_csv(r"Data/UV-DMAB/ACN/385nm/DMAB air_base (peak_over_1).Sample.Raw.csv", 
+                                base_line=False)
 
-data_DMAB_5min_385nm = read_csv(r"Data\\UV-DMAB\\ACN\\385nm\\DMAB air_base 5min 385nm.Sample.Raw.csv", 
-                                base_line=True, 
-                                base_line_path=r"Data\\UV-DMAB\\ACN\\385nm\\DMAB air_base.Sample.Raw.csv")
+data_DMAB_5min_385nm = read_csv(r"Data/UV-DMAB/ACN/385nm/DMAB air_base 5min 385nm.Sample.Raw.csv", 
+                                base_line=False)
 
-data_DMAB_30min_385nm = read_csv(r"Data\\UV-DMAB\\ACN\\385nm\\DMAB air_base 30min 385nm.Sample.Raw.csv", 
-                                 base_line=True, 
-                                 base_line_path=r"Data\\UV-DMAB\\ACN\\385nm\\DMAB air_base.Sample.Raw.csv")
+data_DMAB_30min_385nm = read_csv(r"Data/UV-DMAB/ACN/385nm/DMAB air_base 30min 385nm.Sample.Raw.csv", 
+                                 base_line=False)
 
-data_DMAB_45min_385nm = read_csv(r"Data\\UV-DMAB\\ACN\\385nm\\DMAB air_base 45min 385nm.Sample.Raw.csv", 
-                                 base_line=True, 
-                                 base_line_path=r"Data\\UV-DMAB\\ACN\\385nm\\DMAB air_base.Sample.Raw.csv")
+data_DMAB_45min_385nm = read_csv(r"Data/UV-DMAB/ACN/385nm/DMAB air_base 45min 385nm.Sample.Raw.csv", 
+                                 base_line=False)
 
 
 

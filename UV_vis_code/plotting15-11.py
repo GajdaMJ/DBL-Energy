@@ -1,6 +1,6 @@
-from UV_vis_code.plotting_peak import *
+from UV_VIS_base_line_adjustment import *
 
-data = read_csv('Data\\15-11-24\dma ab 50um 0min 365nm.Sample.Raw.csv')
+data = read_csv('UV_vis_code/thing.Raw.csv')
 
 plt.plot(data['nm'], data['A'])
 
