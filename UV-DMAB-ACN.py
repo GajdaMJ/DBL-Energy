@@ -60,7 +60,7 @@ max_x_value = data_DMAB_3min_254nm['nm'][max_y_index]  # The corresponding x-val
 
 # Add vertical and horizontal reference lines
 plt.axvline(max_x_value, color='black', linestyle='--', linewidth=1, label=f'Max at nm = {max_x_value:.2f}')
-plt.axvline(365, color='black', linestyle='-.', linewidth=0.5, alpha=0.5, label='Exposed with 365nm light')
+# plt.axvline(365, color='black', linestyle='-.', linewidth=0.5, alpha=0.5, label='Exposed with 365nm light')
 plt.axhline(0, color='black', linestyle='--', linewidth=1)
 
 # Set plot limits
