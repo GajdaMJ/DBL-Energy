@@ -35,7 +35,7 @@ plt.ylabel('Absorbance (A)')
 plt.minorticks_on()
 plt.grid(which = 'major', linewidth = 1)
 plt.grid(which = 'minor', linewidth = 0.2)
-plt.suptitle('Absorbance vs. Wavelength for DMAB (Dimethoxyazobenzene) Samples', weight='bold')
+plt.suptitle('Absorbance vs. Wavelength for DMAB (Dimethylazobenzene) Samples', weight='bold')
 plt.title('DMAB Samples Exposed to Various Light Conditions')
 plt.legend()
 
