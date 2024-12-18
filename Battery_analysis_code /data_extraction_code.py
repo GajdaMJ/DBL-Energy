@@ -31,9 +31,9 @@ def data_extract(file_path):
 # Call the function and display the results
 result = data_extract(file_path)
 
-if result is not None:
-    time, voltage, energy_charge, energy_discharge, q_discharge, q_charge, cycle_number = result
-    print("Time (s):", time[:100])
+# if result is not None:
+#     time, voltage, energy_charge, energy_discharge, q_discharge, q_charge, cycle_number = result
+#     print("Time (s):", time[:100])
     # print("Voltage (V):", voltage)
     # print("Energy Charge (W.h):", energy_charge)
     # print("Energy Discharge (W.h):", energy_discharge)
@@ -47,13 +47,7 @@ if result is not None:
 # plt.show()
 
 
-#### modifying the data to find the efficiency
-time, voltage, energy_charge, energy_discharge, q_discharge, q_charge, cycle_number = result
 
-#making a figure
-fig = plt.figure()
-ax1 = fig.add_subplot(111)
-ax2 = ax1.twiny()
 
 
 
