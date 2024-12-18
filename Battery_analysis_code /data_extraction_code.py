@@ -1,39 +1,60 @@
 import numpy as np
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
 
-def read_csv(path, base_line=False, base_line_path=None):
-    def process_file(input_file, output_file):
-        with open(input_file, "r") as infile, open(output_file, "w") as outfile:
-            for i, line in enumerate(infile):
-                if i == 0:
-                    line = line.replace(",", ";", 1).replace(' ', '', 1)
-                else:
-                    parts = line.split(",")
-                    if len(parts) > 2:
-                        line = ",".join(parts[:2]) + ";" + ",".join(parts[2:])
-                        line = line.replace(' ', '', 1).replace(',', '.', 2)
-                outfile.write(line)
+file_path = 'Data/RFB/OGO2024_flow battery 2_cycling_6 mM ethoxyAB + MEEPT + 200 mM TBAPF6 in MeCN_C05.txt'
 
-    if base_line:
-        output_baseline_file = base_line_path.replace('.csv', '_fixed.csv')
-        process_file(base_line_path, output_baseline_file)
-        data_base = np.genfromtxt(output_baseline_file, delimiter=";", dtype=None, names=True, encoding='ISO-8859-1')
+def data_extract(file_path):
+    # Skip the first 91 lines (metadata)
+    skip_lines = 91
+    columns_to_extract = (0, 1, 2, 3, 4, 5, 6)  # Indices of the columns to extract
 
-    output_file = path.replace('.csv', '_fixed.csv')
-    process_file(path, output_file)
-    data = np.genfromtxt(output_file, delimiter=";", dtype=None, names=True, encoding='ISO-8859-1')
+    data = np.genfromtxt(
+        file_path,
+        skip_header=skip_lines,
+        usecols=columns_to_extract,
+        delimiter=";",  # Auto-detect, switch to '\t' if required
+        invalid_raise=False,  # Ignore lines with errors
+        encoding='ISO-8859-1'
+    )
+    # Extract columns
+    time = data[:, 0]
+    voltage = data[:, 1]
+    energy_charge = data[:, 2]
+    energy_discharge = data[:, 3]
+    q_discharge = data[:, 4]
+    q_charge = data[:, 5]
+    cycle_number = data[:, 6]
 
-    if base_line:
-        if len(data) != len(data_base):
-            raise ValueError("Data and baseline files have mismatched lengths.")
-        adjusted_data = np.zeros_like(data)
-        adjusted_data['nm'] = data['nm']
-        adjusted_data['A'] = data['A'] - data_base['A']
-        return adjusted_data
-    else:
-        return data
+    return time, voltage, energy_charge, energy_discharge, q_discharge, q_charge, cycle_number
 
 
-if __name__ == 'main':
-    data_1 = read_csv("Data/RFB/OGO2024_flow battery 2_cycling_6 mM ethoxyAB + MEEPT + 200 mM TBAPF6 in MeCN_C05.txt")
-    print(data_1)
+# Call the function and display the results
+result = data_extract(file_path)
+
+if result is not None:
+    time, voltage, energy_charge, energy_discharge, q_discharge, q_charge, cycle_number = result
+    print("Time (s):", time[:100])
+    # print("Voltage (V):", voltage)
+    # print("Energy Charge (W.h):", energy_charge)
+    # print("Energy Discharge (W.h):", energy_discharge)
+    # print("Q Discharge (mA.h):", q_discharge)
+    # print("Q Charge (mA.h):", q_charge)
+    # print("Cycle Number:", cycle_number)
+
+# plt.plot(time[:1000], voltage[:1000])
+# plt.minorticks_on()
+# plt.grid(which= 'both')
+# plt.show()
+
+
+#### modifying the data to find the efficiency
+time, voltage, energy_charge, energy_discharge, q_discharge, q_charge, cycle_number = result
+
+#making a figure
+fig = plt.figure()
+ax1 = fig.add_subplot(111)
+ax2 = ax1.twiny()
+
+
+
+
