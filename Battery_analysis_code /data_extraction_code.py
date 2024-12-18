@@ -31,21 +31,18 @@ def data_extract(file_path):
 # Call the function and display the results
 result = data_extract(file_path)
 
-# if result is not None:
-#     time, voltage, energy_charge, energy_discharge, q_discharge, q_charge, cycle_number = result
-#     print("Time (s):", time[:100])
-    # print("Voltage (V):", voltage)
-    # print("Energy Charge (W.h):", energy_charge)
-    # print("Energy Discharge (W.h):", energy_discharge)
-    # print("Q Discharge (mA.h):", q_discharge)
-    # print("Q Charge (mA.h):", q_charge)
-    # print("Cycle Number:", cycle_number)
+if result is not None:
+    time, voltage, energy_charge, energy_discharge, q_discharge, q_charge, cycle_number = result
+    print("Time (s):", time[:100])
+#     # print("Voltage (V):", voltage)
+#     # print("Energy Charge (W.h):", energy_charge)
+#     # print("Energy Discharge (W.h):", energy_discharge)
+#     # print("Q Discharge (mA.h):", q_discharge)
+#     # print("Q Charge (mA.h):", q_charge)
+#     # print("Cycle Number:", cycle_number)
 
-# plt.plot(time[:1000], voltage[:1000])
-# plt.minorticks_on()
-# plt.grid(which= 'both')
-# plt.show()
-
+plt.plot(time[:1000], voltage[:1000])
+plt.show()
 
 
 
