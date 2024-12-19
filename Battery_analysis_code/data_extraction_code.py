@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-file_path = 'Data/RFB/OGO2024_flow battery 2_cycling_6 mM ethoxyAB + MEEPT + 200 mM TBAPF6 in MeCN_C05.txt'
+# file_path = 'Data/RFB/OGO2024_flow battery 2_cycling_6 mM ethoxyAB + MEEPT + 200 mM TBAPF6 in MeCN_C05.txt'
 
 def data_extract(file_path):
     # Skip the first 91 lines (metadata)
@@ -28,21 +28,21 @@ def data_extract(file_path):
     return time, voltage, energy_charge, energy_discharge, q_discharge, q_charge, cycle_number
 
 
-# Call the function and display the results
-result = data_extract(file_path)
+# # Call the function and display the results
+# result = data_extract(file_path)
 
-if result is not None:
-    time, voltage, energy_charge, energy_discharge, q_discharge, q_charge, cycle_number = result
-    print("Time (s):", time[:100])
-#     # print("Voltage (V):", voltage)
-#     # print("Energy Charge (W.h):", energy_charge)
-#     # print("Energy Discharge (W.h):", energy_discharge)
-#     # print("Q Discharge (mA.h):", q_discharge)
-#     # print("Q Charge (mA.h):", q_charge)
-#     # print("Cycle Number:", cycle_number)
+# if result is not None:
+#     time, voltage, energy_charge, energy_discharge, q_discharge, q_charge, cycle_number = result
+#     print("Time (s):", time[:100])
+# #     # print("Voltage (V):", voltage)
+# #     # print("Energy Charge (W.h):", energy_charge)
+# #     # print("Energy Discharge (W.h):", energy_discharge)
+# #     # print("Q Discharge (mA.h):", q_discharge)
+# #     # print("Q Charge (mA.h):", q_charge)
+# #     # print("Cycle Number:", cycle_number)
 
-plt.plot(time[:1000], voltage[:1000])
-plt.show()
+# plt.plot(time[:1000], voltage[:1000])
+# plt.show()
 
 
 
