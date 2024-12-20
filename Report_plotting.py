@@ -21,16 +21,16 @@ plt.plot(data_ab_5min['nm'], data_ab_5min['A'], label='AB 5 min', color='#1f77b4
 plt.plot(data_ab_10min['nm'], data_ab_10min['A'], label='AB 10 min', color='#ff7f0e', linestyle='-', linewidth=2)  # Orange, straight line
 plt.plot(data_ab_15min['nm'], data_ab_15min['A'], label='AB 15 min', color='#2ca02c', linestyle='-', linewidth=2)  # Green, straight line
 plt.plot(data_ab_45min['nm'], data_ab_45min['A'], label='AB 45 min', color='#d62728', linestyle='-', linewidth=2)  # Red, straight line
-plt.plot(data_ab_60min['nm'], data_ab_60min['A'], label='AB 60 min', color='#9467bd', linestyle='-', linewidth=2)  # Purple, straight line
+# plt.plot(data_ab_60min['nm'], data_ab_60min['A'], label='AB 60 min', color='#9467bd', linestyle='-', linewidth=2)  # Purple, straight line
 
 # Plotting DMAB datasets
-plt.plot(data_dmab_nonexited['nm'], data_dmab_nonexited['A'], label='DMAB Non-excited', color='#8c564b', linestyle='-.', linewidth=2)  # Brown, dashed-dot
+plt.plot(data_dmab_nonexited['nm'], data_dmab_nonexited['A'], label='DMAB Non-excited', color='red', linestyle='-.', linewidth=2)  # Brown, dashed-dot
 plt.plot(data_dmab_5min['nm'], data_dmab_5min['A'], label='DMAB 5 min', color='#e377c2', linestyle='-.', linewidth=2)  # Pink, dashed-dot
-plt.plot(data_dmab_10min['nm'], data_dmab_10min['A'], label='DMAB 10 min', color='#7f7f7f', linestyle='-.', linewidth=2)  # Gray, dashed-dot
+# plt.plot(data_dmab_10min['nm'], data_dmab_10min['A'], label='DMAB 10 min', color='#7f7f7f', linestyle='-.', linewidth=2)  # Gray, dashed-dot
 
 # Highlight 365 nm line
 plt.axvline(365, color='black', linestyle='-.', linewidth=1, alpha=0.7, label='365 nm Light')
-
+plt.axhline(0, color='black', linestyle='--', linewidth=1)
 # Formatting
 plt.xlabel('Wavelength (nm)', fontsize=14, fontweight='bold')
 plt.ylabel('Absorbance (A)', fontsize=14, fontweight='bold')
