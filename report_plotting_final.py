@@ -34,8 +34,8 @@ plt.plot(data_deab_1min['nm'], data_deab_1min['A'], label='DMAB 5 min', color='d
 plt.axvline(365, color='black', linestyle='-.', linewidth=1, alpha=0.7, label='365 nm Light')
 plt.axhline(0, color='black', linewidth=0.5)
 # Formatting
-plt.xlabel('Wavelength (nm)', fontsize=14, fontweight='bold')
-plt.ylabel('Absorbance (A)', fontsize=14, fontweight='bold')
+plt.xlabel('Wavelength (nm)', fontsize=28)
+plt.ylabel('Absorbance (A)', fontsize=28)
 plt.xticks(np.arange(275, 601, 50), fontsize=12)
 plt.yticks(np.arange(-0.1, 1.1, 0.2), fontsize=12)
 plt.ylim(-0.2, 1)
