@@ -12,7 +12,7 @@ data_ab_45min = read_csv(r"Data/UV-aB/365nmn/aB 50uM 45min 365nm.Sample.Raw.csv"
 data_ab_60min = read_csv(r"Data/UV-aB/365nmn/aB 50um 60min 365nm.Sample.Raw.csv", base_line=True, base_line_path=baseline_path_ab)
 
 # Load DEAB datasets
-baseline_path_deab = r"Data/UV-DEAB/DEAM/air base sample.csv"
+baseline_path_deab = r"Data/UV-VIS_new/measurements 22-11-24/ACN solution.Sample.Raw.csv"
 data_deab_nonexited = read_csv(r"/Users/oliverlohr/Documents/DBL-Energy/Data/UV-DEAB/DEAM/DEAM non excited.Sample.Raw.csv", base_line=True, base_line_path=baseline_path_deab)
 data_deab_1min = read_csv(r"/Users/oliverlohr/Documents/DBL-Energy/Data/UV-DEAB/DEAM/DEAM 1 min.Sample.Raw.csv", base_line=True, base_line_path=baseline_path_deab)
 #data_deab_10min = read_csv(r"Data\UV-DMAB\ACN_365nm\DMAB ACN 10min 365nm.Sample.Raw.csv", base_line=False)
