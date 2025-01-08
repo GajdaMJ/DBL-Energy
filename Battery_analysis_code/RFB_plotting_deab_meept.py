@@ -10,7 +10,7 @@ ax1 = fig.add_subplot(111)
 # plotting the data
 ax1.plot(time[:1000], voltage[:1000])
 ax1.set_ylim(0.75, 3)
-ax1.set_xlim(280, 1215)
+ax1.set_xlim(335, 1170)
 
 # setting axis labels with larger font size
 ax1.set_ylabel("Voltage [V]", weight='bold', fontsize=18)
@@ -20,8 +20,8 @@ ax2 = ax1.twiny()
 ax2.set_xlabel("Cycle Number", weight='bold', fontsize=18)
 
 # fixing the cycles to times
-ax2.set_xlim(290, 1215)
-ax2.set_xticks([280, 634, 931])
+ax2.set_xlim(335, 1170)
+ax2.set_xticks([335, 642, 937])
 ax2.set_xticklabels(['1', '2', '3'], fontsize=16)  # larger font size for tick labels
 
 # enabling and customizing minor and major ticks
