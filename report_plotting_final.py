@@ -4,17 +4,18 @@ import numpy as np
 from UV_VIS_base_line_adjustment import *
 
 # Load AB datasets
-baseline_path_ab = r"Data\UV-aB\365nmn\100% or 0 Absorbance Baseline.Correction.Raw.csv"
-data_ab_5min = read_csv(r"Data\UV-aB\365nmn\aB 50uM 5min 365nm.Sample.Raw.csv", base_line=True, base_line_path=baseline_path_ab)
-data_ab_10min = read_csv(r"Data\UV-aB\365nmn\aB 50uM 10min 365nm.Sample.Raw.csv", base_line=True, base_line_path=baseline_path_ab)
-data_ab_15min = read_csv(r"Data\UV-aB\365nmn\aB 50uM 15min 365nm.Sample.Raw.csv", base_line=True, base_line_path=baseline_path_ab)
-data_ab_45min = read_csv(r"Data\UV-aB\365nmn\aB 50uM 45min 365nm.Sample.Raw.csv", base_line=True, base_line_path=baseline_path_ab)
-data_ab_60min = read_csv(r"Data\UV-aB\365nmn\aB 50um 60min 365nm.Sample.Raw.csv", base_line=True, base_line_path=baseline_path_ab)
+baseline_path_ab = r"Data/UV-aB/365nmn/100% or 0 Absorbance Baseline.Correction.Raw.csv"
+data_ab_5min = read_csv(r"Data/UV-aB/365nmn/aB 50uM 5min 365nm.Sample.Raw.csv", base_line=True, base_line_path=baseline_path_ab)
+data_ab_10min = read_csv(r"Data/UV-aB/365nmn/aB 50uM 10min 365nm.Sample.Raw.csv", base_line=True, base_line_path=baseline_path_ab)
+data_ab_15min = read_csv(r"Data/UV-aB/365nmn/aB 50uM 15min 365nm.Sample.Raw.csv", base_line=True, base_line_path=baseline_path_ab)
+data_ab_45min = read_csv(r"Data/UV-aB/365nmn/aB 50uM 45min 365nm.Sample.Raw.csv", base_line=True, base_line_path=baseline_path_ab)
+data_ab_60min = read_csv(r"Data/UV-aB/365nmn/aB 50um 60min 365nm.Sample.Raw.csv", base_line=True, base_line_path=baseline_path_ab)
 
-# Load DMAB datasets
-data_dmab_nonexited = read_csv(r"Data\UV-DMAB\ACN_365nm\DMAB ACN nonexited.Sample.Raw.csv", base_line=False)
-data_dmab_5min = read_csv(r"Data\UV-DMAB\ACN_365nm\DMAB ACN 5min 365nm.Sample.Raw.csv", base_line=False)
-data_dmab_10min = read_csv(r"Data\UV-DMAB\ACN_365nm\DMAB ACN 10min 365nm.Sample.Raw.csv", base_line=False)
+# Load DEAB datasets
+baseline_path_deab = r"/Users/oliverlohr/Documents/DBL-Energy/Data/UV-DEAB/DEAM/air base sample.csv"
+data_deab_nonexited = read_csv(r"/Users/oliverlohr/Documents/DBL-Energy/Data/UV-DEAB/DEAM/DEAM non excited.Sample.Raw.csv", base_line=True, base_line_path=baseline_path_deab)
+data_deab_1min = read_csv(r"/Users/oliverlohr/Documents/DBL-Energy/Data/UV-DEAB/DEAM/DEAM 1 min.Sample.Raw.csv", base_line=True, base_line_path=baseline_path_deab)
+#data_deab_10min = read_csv(r"Data\UV-DMAB\ACN_365nm\DMAB ACN 10min 365nm.Sample.Raw.csv", base_line=False)
 
 # Plotting AB datasets
 plt.figure(figsize=(10, 6))
@@ -25,8 +26,8 @@ plt.plot(data_ab_45min['nm'], data_ab_45min['A'], label='AB 45 min', color='#d62
 # plt.plot(data_ab_60min['nm'], data_ab_60min['A'], label='AB 60 min', color='#9467bd', linestyle='-', linewidth=2)  # Purple, straight line
 
 # Plotting DMAB datasets
-plt.plot(data_dmab_nonexited['nm'], data_dmab_nonexited['A'], label='DMAB Non-excited', color='red', linestyle='-.', linewidth=2)  # Brown, dashed-dot
-plt.plot(data_dmab_5min['nm'], data_dmab_5min['A'], label='DMAB 5 min', color='#e377c2', linestyle='-.', linewidth=2)  # Pink, dashed-dot
+plt.plot(data_deab_nonexited['nm'], data_deab_nonexited['A'], label='DMAB Non-excited', color='red', linestyle='-.', linewidth=2)  # Brown, dashed-dot
+plt.plot(data_deab_1min['nm'], data_deab_1min['A'], label='DMAB 5 min', color='#e377c2', linestyle='-.', linewidth=2)  # Pink, dashed-dot
 # plt.plot(data_dmab_10min['nm'], data_dmab_10min['A'], label='DMAB 10 min', color='#7f7f7f', linestyle='-.', linewidth=2)  # Gray, dashed-dot
 
 # Highlight 365 nm line
