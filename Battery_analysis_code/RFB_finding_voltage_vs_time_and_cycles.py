@@ -35,7 +35,7 @@
 
 
 from data_extraction_code import * 
-
+result = data_extract("battery 3/OGO2024_flow battery 3_PEIS after 100 cycles_6 mM ethoxyAB + DBBB + 200 mM TBAPF6 in MeCN_02_CV_C05.mpr")
 time, voltage, energy_charge, energy_discharge, q_discharge, q_charge, cycle_number = result
 
 import matplotlib.pyplot as plt
