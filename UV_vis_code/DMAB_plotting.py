@@ -23,8 +23,8 @@ plt.xlabel('Wavelength (nm)', fontsize=14, fontweight='bold')
 plt.ylabel('Absorbance (A)', fontsize=14, fontweight='bold')
 plt.xticks(np.arange(250, 601, 50), fontsize=12)
 plt.yticks(np.arange(-0.2, 1.1, 0.2), fontsize=12)
-plt.ylim(-0.2, 1)
-plt.xlim(290, 600)
+plt.ylim(0, 1)
+plt.xlim(250, 600)
 plt.grid(True, linestyle='--', alpha=0.5)
 
 # Legend inside the plot (top-right corner)
@@ -34,7 +34,7 @@ plt.legend(fontsize=20, loc='upper right', frameon=False)
 plt.tight_layout()
 
 # Save the plot for high-quality output
-plt.savefig('UV_Vis_Absorbance_Plot_Presentation.png', dpi=300, bbox_inches='tight')
+plt.savefig('UV_Vis_Absorbance_Plot_DMAB_Presentation.png', dpi=300, bbox_inches='tight')
 
 # Show the plot
 plt.show()
