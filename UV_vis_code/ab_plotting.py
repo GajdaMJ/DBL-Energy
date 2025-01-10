@@ -1,7 +1,7 @@
 from UV_VIS_base_line_adjustment import *
 
-data = read_csv('Data/UV-DMAAB/365nm/DMAAB ACN 0min.Sample.Raw_fixed.csv')
-data_1 = read_csv('Data/UV-DMAAB/365nm/DMAAB ACN 25min.Sample.Raw.csv')
+data = read_csv('Data/UV-aB/310nm/AB air_base.Sample.Raw.csv', base_line= True, base_line_path= "Data/UV-aB/310nm/AC air_base.Sample.Raw.csv")
+data_1 = read_csv('Data/UV-aB/365nmn/aB 50um 60min 365nm.Sample.Raw.csv')
 
 #plotting
 colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet', 'purple', 'brown']
@@ -23,13 +23,13 @@ plt.axvline(max_x_value, color='black', linestyle='--', linewidth=1, label=f'Max
 plt.axhline(0, color='black', linestyle='--', linewidth=1)
 
 # Set plot limits
-plt.xlim(275, 800)
-plt.ylim(-0.1, 1.3)
+plt.xlim(275, 600)
+plt.ylim(-0.1, 1.1)
 
 # Add labels, title, and legend
 plt.xlabel('Wavelength (nm)')
 plt.ylabel('Absorbance (A)')
-plt.suptitle('Absorbance vs. Wavelength for DMAAB (dimethylanilineazeobenzene) Samples', weight='bold')
+plt.suptitle('Absorbance vs. Wavelength for AB (Azeobenzene) Samples', weight='bold')
 plt.title('DMAB Samples Exposed to Various Light Conditions')
 plt.legend()
 
