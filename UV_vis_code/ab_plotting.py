@@ -9,7 +9,7 @@ colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet', 'purpl
 # Plotting
 plt.figure(figsize=(12, 6))
 plt.plot(data['nm'], data['A'], label = 'No irradiation of AB')
-plt.plot(data_1['nm'], data_1['A'], label = '60 min of AB')
+plt.plot(data_1['nm'], data_1['A'], label = 'After irradiation of AB')
 
 
 # Highlight 365 nm line
@@ -21,7 +21,7 @@ plt.ylabel('Absorbance (A)', fontsize=14, fontweight='bold')
 plt.xticks(np.arange(250, 601, 50), fontsize=12)
 plt.yticks(np.arange(-0.2, 1.1, 0.2), fontsize=12)
 plt.ylim(-0.2, 1)
-plt.xlim(250, 600)
+plt.xlim(290, 600)
 plt.grid(True, linestyle='--', alpha=0.5)
 
 # Legend inside the plot (top-right corner)

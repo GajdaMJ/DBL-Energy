@@ -4,12 +4,13 @@ import numpy as np
 from UV_VIS_base_line_adjustment import *
 
 # Load AB datasets
+# baseline_path_ab = r"Data/UV-aB/365nmn/100% or 0 Absorbance Baseline.Correction.Raw.csv"
 baseline_path_ab = r"Data/UV-aB/365nmn/100% or 0 Absorbance Baseline.Correction.Raw.csv"
-data_ab_5min = read_csv(r"Data/UV-aB/365nmn/aB 50uM 5min 365nm.Sample.Raw.csv", base_line=True, base_line_path=baseline_path_ab)
-data_ab_10min = read_csv(r"Data/UV-aB/365nmn/aB 50uM 10min 365nm.Sample.Raw.csv", base_line=True, base_line_path=baseline_path_ab)
-data_ab_15min = read_csv(r"Data/UV-aB/365nmn/aB 50uM 15min 365nm.Sample.Raw.csv", base_line=True, base_line_path=baseline_path_ab)
-data_ab_45min = read_csv(r"Data/UV-aB/365nmn/aB 50uM 45min 365nm.Sample.Raw.csv", base_line=True, base_line_path=baseline_path_ab)
-data_ab_60min = read_csv(r"Data/UV-aB/365nmn/aB 50um 60min 365nm.Sample.Raw.csv", base_line=True, base_line_path=baseline_path_ab)
+data_ab_5min = read_csv(r"Data/UV-aB/365nmn/aB 50uM 5min 365nm.Sample.Raw.csv", base_line=False, base_line_path=baseline_path_ab)
+data_ab_10min = read_csv(r"Data/UV-aB/365nmn/aB 50uM 10min 365nm.Sample.Raw.csv", base_line=False, base_line_path=baseline_path_ab)
+data_ab_15min = read_csv(r"Data/UV-aB/365nmn/aB 50uM 15min 365nm.Sample.Raw.csv", base_line=False, base_line_path=baseline_path_ab)
+data_ab_45min = read_csv(r"Data/UV-aB/365nmn/aB 50uM 45min 365nm.Sample.Raw.csv", base_line=False, base_line_path=baseline_path_ab)
+data_ab_60min = read_csv(r"Data/UV-aB/365nmn/aB 50um 60min 365nm.Sample.Raw.csv", base_line=False, base_line_path=baseline_path_ab)
 
 # Load DEAB datasets
 baseline_path_deab = r"Data/UV-VIS_new/measurements 22-11-24/ACN solution.Sample.Raw.csv"
