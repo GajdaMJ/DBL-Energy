@@ -13,7 +13,7 @@ plt.plot(data_1['nm'], data_1['A'], label = '60 min of AB')
 
 
 # Highlight 365 nm line
-plt.axvline(365, color='black', linestyle='-.', linewidth=1, alpha=0.7, label='365 nm Light')
+# plt.axvline(365, color='black', linestyle='-.', linewidth=1, alpha=0.7, label='365 nm Light')
 plt.axhline(0, color='black', linestyle='--', linewidth=1)
 # Formatting
 plt.xlabel('Wavelength (nm)', fontsize=14, fontweight='bold')
@@ -25,7 +25,7 @@ plt.xlim(250, 600)
 plt.grid(True, linestyle='--', alpha=0.5)
 
 # Legend inside the plot (top-right corner)
-plt.legend(fontsize=10, loc='upper right', frameon=False)
+plt.legend(fontsize=20, loc='upper right', frameon=False)
 
 # Tight layout for professional appearance
 plt.tight_layout()

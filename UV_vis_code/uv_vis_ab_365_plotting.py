@@ -18,7 +18,7 @@ max_y_index = np.argmax(data['A'])
 max_x_value = data['nm'][max_y_index]  # The corresponding x-value for max y
 
 # Add vertical and horizontal reference lines
-plt.axvline(max_x_value, color='black', linestyle='--', linewidth=1, label=f'Max at nm = {max_x_value:.2f}')
+# plt.axvline(max_x_value, color='black', linestyle='--', linewidth=1, label=f'Max at nm = {max_x_value:.2f}')
 # plt.axvline(365, color='black', linestyle='-.', linewidth=0.5, alpha=0.5, label='Exposed with 365nm light')
 plt.axhline(0, color='black', linestyle='--', linewidth=1)
 
